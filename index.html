@@ -48,6 +48,8 @@
   <!-- Generated HTML will be displayed here -->
 </div>
 
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+
 <script>
   function generateHTML() {
     var selectedOption = document.getElementById('option').value;
@@ -78,6 +80,7 @@
       default:
         outputContainer.innerHTML = 'Please select an option.';
     }
+        generatedHTML = '<pre>[code]...your generated HTML...[/code]</pre>';
   }
 
   function generateLink() {
@@ -152,6 +155,18 @@
     var body = document.body;
     body.classList.toggle('dark-mode');
   }
+
+  function copyToClipboard() {
+    var textarea = document.createElement('textarea');
+    textarea.value = generatedHTML;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    alert('HTML copied to clipboard!');
+}
+
 
 </script>
 
