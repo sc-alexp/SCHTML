@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Creator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>ISU ITS Solution Center - HTML Creator</h1>
+
+<form id="htmlForm">
+  <label for="option">Select an option:</label>
+  <select id="option" name="option">
+    <option value="0">Options</option>
+    <option value="1">Link</option>
+    <option value="2">Telephone Number</option>
+    <option value="3">Email</option>
+    <option value="4">Image</option>
+    <option value="5">Formatted Text</option>
+    <option value="6">Commonly Used HTML</option>
+  </select>
+  <br>
+
+  <div id="inputSection">
+    <!-- Additional input fields will be added here dynamically -->
+  </div>
+
+  <br>
+  <button type="button" onclick="generateHTML()">Generate HTML</button>
+</form>
+
+<div id="output">
+  <!-- Generated HTML will be displayed here -->
+</div>
+
+<script>
+  function generateHTML() {
+    // JavaScript logic to generate HTML based on selected options and inputs
+    // You can adapt and improve this function according to your needs
+    // ...
+
+    // Example: Displaying generated HTML
+    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="https://example.com"&gt;Example Link&lt;/a&gt;[/code]</pre>';
+  }
+</script>
+
+</body>
+</html>
