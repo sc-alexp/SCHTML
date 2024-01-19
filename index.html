@@ -42,14 +42,105 @@
 
 <script>
   function generateHTML() {
-    // JavaScript logic to generate HTML based on selected options and inputs
-    // You can adapt and improve this function according to your needs
-    // ...
+    var selectedOption = document.getElementById('option').value;
+    var outputContainer = document.getElementById('output');
+    
+    // Clear previous output
+    outputContainer.innerHTML = '';
 
-    // Example: Displaying generated HTML
-    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="https://example.com"&gt;Example Link&lt;/a&gt;[/code]</pre>';
+    switch (selectedOption) {
+      case '1':
+        generateLink();
+        break;
+      case '2':
+        generateTelephoneNumber();
+        break;
+      case '3':
+        generateEmail();
+        break;
+      case '4':
+        generateImage();
+        break;
+      case '5':
+        generateFormattedText();
+        break;
+      case '6':
+        generateCommonlyUsedHTML();
+        break;
+      default:
+        outputContainer.innerHTML = 'Please select an option.';
+    }
+  }
+
+  function generateLink() {
+    var link = prompt("Enter the desired link:");
+    var text = prompt("Enter the text you would like to display:");
+    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="' + link + '"&gt;' + text + '&lt;/a&gt;[/code]</pre>';
+  }
+
+  function generateTelephoneNumber() {
+    var number = prompt("Enter the phone number (ex. 5152944000):");
+    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="tel:' + number + '"&gt;(' + number.slice(0, 3) + ') ' + number.slice(3, 6) + '-' + number.slice(6) + '&lt;/a&gt;[/code]</pre>';
+  }
+
+  function generateEmail() {
+    var email = prompt("Enter the email:");
+    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="mailto:' + email + '"&gt;' + email + '&lt;/a&gt;[/code]</pre>';
+  }
+
+  function generateImage() {
+    var image = prompt("Enter the image link:");
+    document.getElementById('output').innerHTML = '<pre>[code]&lt;img src="' + image + '"&gt;[/code]</pre>';
+  }
+
+  function generateFormattedText() {
+    var text = prompt("Enter the text you would like to display:");
+    var formatType = prompt("How to format? (bold, italic, underline, big, small):");
+    
+    var formattedText = '';
+    switch (formatType) {
+      case 'bold':
+        formattedText = '<b>' + text + '</b>';
+        break;
+      case 'italic':
+        formattedText = '<i>' + text + '</i>';
+        break;
+      case 'underline':
+        formattedText = '<u>' + text + '</u>';
+        break;
+      case 'big':
+        formattedText = '<big>' + text + '</big>';
+        break;
+      case 'small':
+        formattedText = '<small>' + text + '</small>';
+        break;
+      default:
+        formattedText = text; // No formatting
+    }
+
+    document.getElementById('output').innerHTML = '<pre>[code]' + formattedText + '[/code]</pre>';
+  }
+
+  function generateCommonlyUsedHTML() {
+    // You can customize this section based on your needs
+    var commonlyUsedHTML = `
+    Solution Center link:
+    [code]&lt;a href="https://it.iastate.edu/help"&gt;ISU ITS Solution Center&lt;/a&gt;[/code]
+
+    Solution Center phone:
+    [code]&lt;a href="tel:5152944000"&gt;(515) 294-4000&lt;/a&gt;[/code]
+
+    Solution Center email:
+    [code]&lt;a href="mailto:solution@iastate.edu"&gt;solution@iastate.edu&lt;/a&gt;[/code]
+
+    Iowa State logo (image):
+    [code]&lt;img src="https://www.it.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;[/code]
+    `;
+
+    document.getElementById('output').innerHTML = '<pre>' + commonlyUsedHTML + '</pre>';
   }
 </script>
+
 
 </body>
 </html>
