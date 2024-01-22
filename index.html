@@ -111,19 +111,19 @@
     var formattedText = '';
     switch (formatType) {
       case 'bold':
-        formattedText = '<b>' + text + '</b>';
+        formattedText = '&lt;b&gt;' + text + '&lt;/b&gt;';
         break;
       case 'italic':
-        formattedText = '<i>' + text + '</i>';
+        formattedText = '&lt;i&gt;' + text + '&lt;/i&gt;';
         break;
       case 'underline':
-        formattedText = '<u>' + text + '</u>';
+        formattedText = '&lt;u&gt;' + text + '&lt;/u&gt;';
         break;
       case 'big':
-        formattedText = '<big>' + text + '</big>';
+        formattedText = '&lt;big&gt;' + text + '&lt;/big&gt;';
         break;
       case 'small':
-        formattedText = '<small>' + text + '</small>';
+        formattedText = '&lt;small&gt;' + text + '&lt;/small&gt;';
         break;
       default:
         formattedText = text; // No formatting
@@ -134,7 +134,7 @@
 
   function generateCommonlyUsedHTML() {
     // You can customize this section based on your needs
-    var commonlyUsedHTML = `
+    var commonlyUsedHTML = `    
     Solution Center link:
     [code]&lt;a href="https://it.iastate.edu/help"&gt;ISU ITS Solution Center&lt;/a&gt;[/code]
 
