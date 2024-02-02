@@ -18,6 +18,30 @@ ul {
   text-align:center;
 }
 
+.copy-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-family: Nimbus Sans,sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #C7102E;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px grey;
+}
+
+.copy-button:hover {background-color: #A30D26}
+
+.copy-button:active {
+  background-color: #A30D26;
+  box-shadow: 0px 1px 5px grey;
+  transform: translateY(4px);
+}
+
 .vertical-center {
   transform: translateY(100%);
 }
@@ -66,7 +90,7 @@ li a:hover:not(.active) {
     <br>
 	<input type="text">
 	<br><br><br><br>
-    <button type="button">Copy for Ticket</button>
+    <button class="copy-button"  type="button">Copy for Ticket</button>
 </form>
 </body>
 </html>
