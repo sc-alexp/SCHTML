@@ -1,175 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Creator</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      transition: background-color 0.5s, color 0.5s;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-
-  .dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
   </style>
 </head>
 <body>
-
-<img src="https://raw.githubusercontent.com/sc-alexp/SCHTML/main/coollogo_com-2526951.png">
-<br>
-<button id="toggleDarkMode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-
-<form id="htmlForm">
-  <label for="option">Select an option:</label>
-  <select id="option" name="option">
-    <option value="0">Options</option>
-    <option value="1">Link</option>
-    <option value="2">Telephone Number</option>
-    <option value="3">Email</option>
-    <option value="4">Image</option>
-    <option value="5">Formatted Text</option>
-    <option value="6">Commonly Used HTML</option>
-  </select>
-  <br>
-
-  <div id="inputSection">
-    <!-- Additional input fields will be added here dynamically -->
-  </div>
-
-  <br>
-  <button type="button" onclick="generateHTML()">Generate HTML</button>
-</form>
-
-<div id="output">
-  <!-- Generated HTML will be displayed here -->
-</div>
-
-<button onclick="copyToClipboard()">Copy to Clipboard (WIP)</button>
-
-<script>
-  function generateHTML() {
-    var selectedOption = document.getElementById('option').value;
-    var outputContainer = document.getElementById('output');
-    
-    // Clear previous output
-    outputContainer.innerHTML = '';
-
-    switch (selectedOption) {
-      case '1':
-        generateLink();
-        break;
-      case '2':
-        generateTelephoneNumber();
-        break;
-      case '3':
-        generateEmail();
-        break;
-      case '4':
-        generateImage();
-        break;
-      case '5':
-        generateFormattedText();
-        break;
-      case '6':
-        generateCommonlyUsedHTML();
-        break;
-      default:
-        outputContainer.innerHTML = 'Please select an option.';
-    }
-        generatedHTML = '<pre>[code]...your generated HTML...[/code]</pre>';
-  }
-
-  function generateLink() {
-    var link = prompt("Enter the desired link:");
-    var text = prompt("Enter the text you would like to display:");
-    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="' + link + '"&gt;' + text + '&lt;/a&gt;[/code]</pre>';
-  }
-
-  function generateTelephoneNumber() {
-    var number = prompt("Enter the phone number (ex. 5152944000):");
-    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="tel:' + number + '"&gt;(' + number.slice(0, 3) + ') ' + number.slice(3, 6) + '-' + number.slice(6) + '&lt;/a&gt;[/code]</pre>';
-  }
-
-  function generateEmail() {
-    var email = prompt("Enter the email:");
-    document.getElementById('output').innerHTML = '<pre>[code]&lt;a href="mailto:' + email + '"&gt;' + email + '&lt;/a&gt;[/code]</pre>';
-  }
-
-  function generateImage() {
-    var image = prompt("Enter the image link:");
-    document.getElementById('output').innerHTML = '<pre>[code]&lt;img src="' + image + '"&gt;[/code]</pre>';
-  }
-
-  function generateFormattedText() {
-    var text = prompt("Enter the text you would like to display:");
-    var formatType = prompt("How to format? (bold, italic, underline, big, small):");
-    
-    var formattedText = '';
-    switch (formatType) {
-      case 'bold':
-        formattedText = '&lt;b&gt;' + text + '&lt;/b&gt;';
-        break;
-      case 'italic':
-        formattedText = '&lt;i&gt;' + text + '&lt;/i&gt;';
-        break;
-      case 'underline':
-        formattedText = '&lt;u&gt;' + text + '&lt;/u&gt;';
-        break;
-      case 'big':
-        formattedText = '&lt;big&gt;' + text + '&lt;/big&gt;';
-        break;
-      case 'small':
-        formattedText = '&lt;small&gt;' + text + '&lt;/small&gt;';
-        break;
-      default:
-        formattedText = text; // No formatting
-    }
-
-    document.getElementById('output').innerHTML = '<pre>[code]' + formattedText + '[/code]</pre>';
-  }
-
-  function generateCommonlyUsedHTML() {
-    // You can customize this section based on your needs
-    var commonlyUsedHTML = `    
-    Solution Center link:
-    [code]&lt;a href="https://it.iastate.edu/help"&gt;ISU ITS Solution Center&lt;/a&gt;[/code]
-
-    Solution Center phone:
-    [code]&lt;a href="tel:5152944000"&gt;(515) 294-4000&lt;/a&gt;[/code]
-
-    Solution Center email:
-    [code]&lt;a href="mailto:solution@iastate.edu"&gt;solution@iastate.edu&lt;/a&gt;[/code]
-
-    Iowa State logo (image):
-    [code]&lt;img src="https://www.it.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;[/code]
-    `;
-
-    document.getElementById('output').innerHTML = '<pre>' + commonlyUsedHTML + '</pre>';
-  }
-
-  function toggleDarkMode() {
-    var body = document.body;
-    body.classList.toggle('dark-mode');
-  }
-
-  function copyToClipboard() {
-    var textarea = document.createElement('textarea');
-    textarea.value = generatedHTML;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-
-    alert('HTML copied to clipboard!');
-}
-
-
-</script>
-
-
+<ul>
+  <li><img src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg" style="height:50px;"></li>
+  <li><p>ITS Solution Center Ticket Text Creator</p></li>
+</ul>
 </body>
 </html>
