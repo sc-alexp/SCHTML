@@ -42,6 +42,27 @@ ul {
   transform: translateY(4px);
 }
 
+.modifier-button {
+  display: inline-block;
+  padding: 2px 3px;
+  font-family: Nimbus Sans,sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  background-color: #FAFAFA;
+  border: none;
+}
+
+.modifier-button:hover {background-color: #DBDBDB}
+
+.modifier-button:active {
+  background-color: #DBDBDB;
+  transform: translateY(2px);
+}
+
 .vertical-center {
   transform: translateY(100%);
 }
@@ -77,16 +98,16 @@ li a:hover:not(.active) {
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <form class="center">
-	<button type="button">Color</button>
-	<button type="button"><b>B</b></button>
-	<button type="button"><i>I</i></button>
-	<button type="button"><u>U</u></button>
-    <button type="button">Big</button>
-    <button type="button">Small</button>
-    <button type="button">Code</button>
+	<button class="modifier-button" type="button">Color</button>
+	<button class="modifier-button" type="button"><b>B</b></button>
+	<button class="modifier-button" type="button"><i>I</i></button>
+	<button class="modifier-button" type="button"><u>U</u></button>
+    <button class="modifier-button" type="button">Big</button>
+    <button class="modifier-button" type="button">Small</button>
+    <button class="modifier-button" type="button">Code</button>
 
-	<button type="button">Link</button>
-	<button type="button">Image</button>
+	<button class="modifier-button" type="button">Link</button>
+	<button class="modifier-button" type="button">Image</button>
     <br>
 	<input type="text">
 	<br><br><br><br>
