@@ -12,3 +12,7 @@ window.onload = function() {
 function refreshPage(){
     window.location.reload();
 }
+
+function notReady() {
+  alert("Functionality not yet implemented!");
+}
