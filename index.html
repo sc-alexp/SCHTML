@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SCHTML</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
+	<link rel="icon" type="image/x-icon" href="images/favicon.png">
+  </head>
+  <body>
+    <div class="container" style="background-color: #C8102E; margin: 0px; padding: 10px; box-shadow: 0px 0px 10px black"> <!-- Navbar to display ISU logo & Website title -->
+      <!-- ISU Logo -->
+	  <a target="_blank" rel="noopener noreferrer" href="https://iastate.edu"><img class="isulogo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg"></a>
+	  <div class="vertical-center" style="right: 10px;">
+	  <a target="_blank" rel="noopener noreferrer" style="text-decoration:none;" href="https://its.iastate.edu/help"><h1>ISU ITS Solution Center Ticket Text Formatter</h1></a>
+	  </div>
+    </div>
+    
+    <div style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"> <!-- Field for user text-entry -->
+		<div class="btn-group" style="">
+			<button>Color</button>
+			<button><b>B</b></button>
+			<button><i>I</i></button>
+			<button><u>U</u></button>
+			<button>Big</button>
+			<button>Small</button>
+			<button>Code</button>
+			<button>Link</button>
+			<button>Image</button>
+		</div>
+		<div id="text-entry">
+			<textarea name="Text1">Hello,&NewLine;&NewLine;   &NewLine;&NewLine;&lt;a href="https://www.it.iastate.edu/help"&gt;&lt;strong&gt;ITS Solution Center&lt;/strong&gt;&lt;/a&gt;&NewLine;&lt;a href="https://www.iastate.edu">&lt;img border="0" alt="Iowa State University Logo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;</textarea>
+		</div>
+		<p style="font-size: 10px;color: red;margin: 0px;"><b>Don't copy this directly into a ticket! Use the button below!</b></p>
+		<br>
+		<div style="text-align: center;">
+			<button class="submit-btn">Copy for Ticket</button>
+			<br><br>
+			<button class="reset-btn" onClick="refreshPage()" >Reset</button>
+		</div>
+    </div>
+
+    <div style="position: absolute; bottom: 0; width: 99%; left: 50%; transform: translateX(-50%);"> <!-- Div for footer of page -->
+      <marquee><p id="announcementText"></p></marquee> <!-- Shows the content of announcement.txt at the bottom of the screen -->
+    </div>
+  </body>
+</html>
