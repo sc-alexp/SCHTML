@@ -1,14 +1,14 @@
-function readTextFile(file) { 
-  var rawFile = new XMLHttpRequest(); 
-  rawFile.open("GET", file, false); 
-  rawFile.onreadystatechange = function () { 
-    if (rawFile.readyState === 4) { 
-      if (rawFile.status === 200 || rawFile.status == 0) { 
-        var allText = rawFile.responseText; 
-          document.getElementById("text-container").innerHTML = allText; 
-        } 
-      } 
-    } 
-    rawFile.send(null); 
-  } 
-readTextFile("announcement.txt"); 
+window.onload = function() {
+    // Fetch the content of the announcement.txt file
+    fetch('announcement.txt')
+        .then(response => response.text())
+        .then(text => {
+            // Set the text content of the <p> element
+            document.getElementById('announcementText').textContent = text;
+        })
+        .catch(error => console.error('Error fetching announcement:', error));
+}
+
+function refreshPage(){
+    window.location.reload();
+}
