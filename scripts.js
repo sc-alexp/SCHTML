@@ -83,8 +83,12 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<b>" + selectedText + "</b>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<b>" + selectedText + "</b>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
 		
 		function underline() {
@@ -92,8 +96,12 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<u>" + selectedText + "</u>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<u>" + selectedText + "</u>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
 		
 		function italic() {
@@ -101,8 +109,12 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<i>" + selectedText + "</i>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<i>" + selectedText + "</i>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
 		
 		function big() {
@@ -110,8 +122,12 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<big>" + selectedText + "</big>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<big>" + selectedText + "</big>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
 		
 		function small() {
@@ -119,8 +135,12 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<small>" + selectedText + "</small>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<small>" + selectedText + "</small>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
 		
 		function code() {
@@ -128,7 +148,11 @@ function copyForTicket() {
 			var start = textarea.selectionStart;
 			var end = textarea.selectionEnd;
 			var selectedText = textarea.value.substring(start, end);
-			var newText = textarea.value.substring(0, start) + "<code>" + selectedText + "</code>" + textarea.value.substring(end);
-			textarea.value = newText;
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<code>" + selectedText + "</code>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
 		}
            
