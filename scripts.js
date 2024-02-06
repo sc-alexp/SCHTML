@@ -68,13 +68,67 @@ function copyForTicket() {
             });
 
             // Copy to clipboard
-            navigator.clipboard.writeText(clipboardContent)
+            navigator.clipboard.writeText(clipboardContent.trim())
                 .then(function() {
                     console.log('Text copied to clipboard:', clipboardContent);
-                    alert('Text copied to clipboard!');
                 })
                 .catch(function(error) {
                     console.error('Error copying text to clipboard: ', error);
                     alert('Error copying text to clipboard');
                 });
         }
+		
+		function bold() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<b>" + selectedText + "</b>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+		
+		function underline() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<u>" + selectedText + "</u>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+		
+		function italic() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<i>" + selectedText + "</i>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+		
+		function big() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<big>" + selectedText + "</big>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+		
+		function small() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<small>" + selectedText + "</small>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+		
+		function code() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			var newText = textarea.value.substring(0, start) + "<code>" + selectedText + "</code>" + textarea.value.substring(end);
+			textarea.value = newText;
+		}
+           
