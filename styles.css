@@ -64,7 +64,9 @@ textarea {
 	border-width: 3px;
 	border-color: lightgray;
 	box-shadow: 0px 0px 30px lightgray;
-	resize: none
+	resize: none;
+	font-family: Lato, Arial, sans-serif;
+	font-size: 14px;
 }
 
 .submit-btn {
