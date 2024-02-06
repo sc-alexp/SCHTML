@@ -16,3 +16,19 @@ function refreshPage(){
 function notReady() {
   alert("Functionality not yet implemented!");
 }
+
+function insertImage() {
+    var link = prompt("Please enter the link to the image:");
+    var width = prompt("Please enter the width of the image:");
+
+    if (link && width) {
+        var textarea = document.getElementsByName("Text1")[0];
+        var startPos = textarea.selectionStart;
+        var endPos = textarea.selectionEnd;
+        var selectedText = textarea.value.substring(startPos, endPos);
+        var imgTag = '<img src="' + link + '" width="' + width + '">';
+
+        var newText = textarea.value.substring(0, startPos) + imgTag + textarea.value.substring(endPos);
+        textarea.value = newText;
+    }
+}
