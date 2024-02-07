@@ -1,126 +1,154 @@
-.container {
-  position: relative;
+window.onload = function() {
+    // Fetch the content of the announcement.txt file
+    fetch('announcement.txt')
+        .then(response => response.text())
+        .then(text => {
+            // Set the text content of the <p> element
+            document.getElementById('announcementText').textContent = text;
+        })
+        .catch(error => console.error('Error fetching announcement:', error));
 }
 
-.vertical-center {
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+function refreshPage(){
+    window.location.reload();
 }
 
-body {
+function notReady() {
+  alert("Functionality not yet implemented!");
 }
 
-h1 {
-	font-family: Nimbus Sans,sans-serif;
-	font-size:24px;
-	color: white;
-	transition: 0.3s;
+function insertImage() {
+    var link = prompt("Please enter the link to the image:");
+    var width = prompt("Please enter the width of the image (in px.):");
+
+    if (link && width) {
+        var textarea = document.getElementsByName("Text1")[0];
+        var startPos = textarea.selectionStart;
+        var endPos = textarea.selectionEnd;
+        var selectedText = textarea.value.substring(startPos, endPos);
+        var imgTag = '<img src="' + link + '" width="' + width + '">';
+
+        var newText = textarea.value.substring(0, startPos) + imgTag + textarea.value.substring(endPos);
+        textarea.value = newText;
+    }
 }
 
-h1:hover {
-	opacity: 0.5;
+function insertLink() {
+    var link = prompt("Please enter the desired link:", "https://");
+
+    var text;
+    if (selectedText) {
+        text = selectedText;
+    } else {
+        text = prompt("Please enter the text to display");
+    }
+
+    if (link && text) {
+        var linkTag = '<a href="' + link + '">' + text + '</a>';
+        var newText = textarea.value.substring(0, startPos) + linkTag + textarea.value.substring(endPos);
+        textarea.value = newText;
+    }
 }
 
-.isulogo {
-	filter: brightness(0) invert(1);
-	transition: 0.3s;
-}
+function copyForTicket() {
+            // Get the textarea contents
+            var textareaContent = document.getElementById('Text1').value;
+            // Split the contents by lines
+            var lines = textareaContent.split('\n');
+            // Prepare the clipboard content
+            var clipboardContent = '';
+            // Loop through each line
+            lines.forEach(function(line) {
+                // Append [code] to the beginning and [/code] to the end of each line
+                clipboardContent += '[code]' + line + '[/code]\n';
+            });
 
-.isulogo:hover {
-	opacity: 0.5;
-}
-
-p {
-	font-family: Nimbus Sans,sans-serif;
-	
-	padding: 0px;
-	margin: 0px;
-}
-
-.btn-group button {
-  background-color: lightgray;
-  color: black;
-  border: none;
-  border-radius: 3px;
-  padding: 3px 5px;
-  margin: 1px;
-  cursor: pointer;
-  float: left;
-  font-family: Nimbus Sans,sans-serif;
-  font-size: 18px;
-}
-
-.btn-group button:hover {
-  background-color: darkgray;
-}
-
-.btn-group button:active {
-  transform: translateY(2px);
-}
-
-textarea {
-	width: 600px;
-	height: 200px;
-	border-radius: 5px;
-	border-width: 3px;
-	border-color: lightgray;
-	box-shadow: 0px 0px 30px lightgray;
-	resize: none;
-	font-family: Lato, Arial, sans-serif;
-	font-size: 14px;
-}
-
-.submit-btn {
-	padding: 10px 15px;
-	font-size: 24px;
-	text-align: center;
-	cursor: pointer;
-	outline: none;
-	color: white;
-	background-color: #C8102E;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 9px #520713;
-	transition: 0.1s;
-}
-
-.submit-btn:active {
-	color: lightgreen;
-	background-color: #7A0A1D;
-	box-shadow: 0 5px #520713, 0px 0px 25px lightgreen, 0px 0px 100px lightgreen;
-	text-shadow: 0px 0px 10px lightgreen;
-	transform: translateY(4px);
-}
-
-.submit-btn:hover {
-	color: lightgreen;
-}
-
-.reset-btn {
-	padding: 5px 10px;
-	font-size: 12px;
-	text-align: center;
-	cursor: pointer;
-	outline: none;
-	color: white;
-	background-color: #C8102E;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 3px #520713;
-	transition: 0.1s;
-}
-
-.reset-btn:active {
-	color: red;
-	background-color: #7A0A1D;
-	box-shadow: 0 0px #520713, 0px 0px 25px red, 0px 0px 100px red;
-	text-shadow: 0px 0px 10px red;
-	transform: translateY(3px);
-}
-
-.reset-btn:hover {
-	color: red;
-}
+            // Copy to clipboard
+            navigator.clipboard.writeText(clipboardContent.trim())
+                .then(function() {
+                    console.log('Text copied to clipboard:', clipboardContent);
+                })
+                .catch(function(error) {
+                    console.error('Error copying text to clipboard: ', error);
+                    alert('Error copying text to clipboard');
+                });
+        }
+		
+		function bold() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<b>" + selectedText + "</b>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+		
+		function underline() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<u>" + selectedText + "</u>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+		
+		function italic() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<i>" + selectedText + "</i>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+		
+		function big() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<big>" + selectedText + "</big>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+		
+		function small() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<small>" + selectedText + "</small>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+		
+		function code() {
+			var textarea = document.getElementById("Text1");
+			var start = textarea.selectionStart;
+			var end = textarea.selectionEnd;
+			var selectedText = textarea.value.substring(start, end);
+			if (end-start > 0) {
+				var newText = textarea.value.substring(0, start) + "<code>" + selectedText + "</code>" + textarea.value.substring(end);
+				textarea.value = newText;
+			} else {
+				alert('No text selected');
+			}
+		}
+           
