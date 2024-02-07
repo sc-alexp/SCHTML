@@ -34,11 +34,7 @@ function insertImage() {
 }
 
 function insertLink() {
-    var link = prompt("Please enter the desired link:");
-    var textarea = document.getElementsByName("Text1")[0];
-    var startPos = textarea.selectionStart;
-    var endPos = textarea.selectionEnd;
-    var selectedText = textarea.value.substring(startPos, endPos);
+    var link = prompt("Please enter the desired link:", "https://");
 
     var text;
     if (selectedText) {
