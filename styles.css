@@ -57,8 +57,12 @@ p {
   background-color: darkgray;
 }
 
+.btn-group button:active {
+  transform: translateY(2px);
+}
+
 textarea {
-	width: 500px;
+	width: 600px;
 	height: 200px;
 	border-radius: 5px;
 	border-width: 3px;
