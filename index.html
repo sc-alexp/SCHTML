@@ -17,7 +17,8 @@
     
     <div style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-150px); height: auto;"> <!-- Field for user text-entry -->
 		<div class="btn-group">
-			<button onclick="notReady()">Color</button>
+			<button onclick="color()">Apply:</button>
+			<input type="color" id="colorPicker" value="#000000">
 			<button onclick="bold()"><b>B</b></button>
 			<button onclick="italic()"><i>I</i></button>
 			<button onclick="underline()"><u>U</u></button>
@@ -36,6 +37,7 @@
 			<button class="submit-btn" onclick="copyForTicket()">Copy for Ticket</button>
 			<br><br>
 			<button class="reset-btn" onClick="refreshPage()" >Reset</button>
+			<a target=”_blank” href="https://iastate.service-now.com/kb_view.do?sysparm_article=KB0023216"><button class="info-btn">Info</button></a>
 		</div>
     </div>
   </body>
