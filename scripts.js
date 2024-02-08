@@ -46,7 +46,7 @@ function insertLink() {
         text = prompt("Please enter the text to display");
     }
     if (link && text) {
-        var linkTag = '<a href="' + link + '">' + text + '</a>';
+        var linkTag = '<a href="' + link + '"><u>' + text + '</u></a>';
         var newText = textarea.value.substring(0, startPos) + linkTag + textarea.value.substring(endPos);
         textarea.value = newText;
     }
