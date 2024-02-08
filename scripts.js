@@ -34,15 +34,17 @@ function insertImage() {
 }
 
 function insertLink() {
-    var link = prompt("Please enter the desired link:", "https://");
-
+    var link = prompt("Please enter the desired link:");
+    var textarea = document.getElementsByName("Text1")[0];
+    var startPos = textarea.selectionStart;
+    var endPos = textarea.selectionEnd;
+    var selectedText = textarea.value.substring(startPos, endPos);
     var text;
     if (selectedText) {
         text = selectedText;
     } else {
         text = prompt("Please enter the text to display");
     }
-
     if (link && text) {
         var linkTag = '<a href="' + link + '">' + text + '</a>';
         var newText = textarea.value.substring(0, startPos) + linkTag + textarea.value.substring(endPos);
