@@ -53,6 +53,19 @@ p {
   font-size: 18px;
 }
 
+.btn-group input {
+  background-color: lightgray;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin: 1px;
+  cursor: pointer;
+  float: left;
+  font-family: Nimbus Sans,sans-serif;
+  font-size: 18px;
+}
+
 .btn-group button:hover {
   background-color: darkgray;
 }
@@ -123,4 +136,31 @@ textarea {
 
 .reset-btn:hover {
 	color: red;
+}
+
+.info-btn {
+	padding: 5px 10px;
+	font-size: 12px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: black;
+	background-color: lightgray;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 3px #520713;
+	transition: 0.1s;
+}
+
+.info-btn:active {
+	color: lightblue;
+	background-color: #darkgray;
+	box-shadow: 0 0px lightblue, 0px 0px 25px lightblue, 0px 0px 100px lightblue;
+	text-shadow: 0px 0px 10px lightblue;
+	transform: translateY(3px);
+}
+
+.info-btn:hover {
+	color: lightblue;
+	background-color: darkgray;
 }
