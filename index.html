@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SCHTML</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="scripts.js"></script>
+
+<head>
+	<title>SCHTML</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="scripts.js"></script>
 	<link rel="icon" type="image/x-icon" href="images/favicon.png">
-  </head>
-  <body>
-    <div class="container" style="background-color: #C8102E; margin: 0px; padding: 10px; box-shadow: 0px 0px 10px black; position: fixed; top: 0; left: 0; width: 100%;"> <!-- Navbar to display ISU logo & Website title -->
-      <!-- ISU Logo -->
-	  <a target="_blank" rel="noopener noreferrer" href="https://iastate.edu"><img class="isulogo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg"></a>
-	  <div class="vertical-center" style="right: 30px;">
-	  <a target="_blank" rel="noopener noreferrer" style="text-decoration:none;" href="https://its.iastate.edu/help"><h1>ITS Solution Center HTML Formatter</h1></a>
-	  </div>
-    </div>
-    
-    <div style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-150px); height: auto;"> <!-- Field for user text-entry -->
+</head>
+
+<body>
+	<div class="container"
+		style="background-color: #C8102E; margin: 0px; padding: 10px; box-shadow: 0px 0px 10px black; position: fixed; top: 0; left: 0; width: 100%;">
+		<!-- Navbar to display ISU logo & Website title -->
+		<!-- ISU Logo -->
+		<a target="_blank" rel="noopener noreferrer" href="https://iastate.edu"><img class="isulogo"
+				src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg"></a>
+		<div class="vertical-center" style="right: 30px;">
+			<a target="_blank" rel="noopener noreferrer" style="text-decoration:none;"
+				href="https://its.iastate.edu/help">
+				<h1>ITS Solution Center HTML Formatter</h1>
+			</a>
+		</div>
+	</div>
+
+	<div style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-150px); height: auto;">
+		<!-- Field for user text-entry -->
 		<div class="btn-group">
-			<button onclick="color()">Apply:</button>
-			<input type="color" id="colorPicker" value="#000000">
-			<button onclick="bold()"><b>B</b></button>
-			<button onclick="italic()"><i>I</i></button>
-			<button onclick="underline()"><u>U</u></button>
-			<button onclick="big()">Big</button>
-			<button onclick="small()">Small</button>
-			<button onclick="code()">Code</button>
-			<button onclick="insertLink()">Link</button>
-			<button onclick="insertImage()">Image</button>
+			<div class="tooltip">
+				<button onclick="color()">Apply:</button>
+				<span class="tooltiptext">Apply Color</span>
+			</div>
+			<div class="tooltip">
+				<input type="color" id="colorPicker" value="#000000">
+				<span class="tooltiptext">Choose Color</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="bold()"><b>B</b></button>
+				<span class="tooltiptext">Bold Text</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="italic()"><i>I</i></button>
+				<span class="tooltiptext">Italicize Text</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="underline()"><u>U</u></button>
+				<span class="tooltiptext">Underline Text</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="big()">Big</button>
+				<span class="tooltiptext">Increase Text Size</span>
+			</div>
+
+			<div class="tooltip">
+				<button onclick="small()">Small</button>
+				<span class="tooltiptext">Decrease Text Size</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="code()">Code</button>
+				<span class="tooltiptext">Code</span>
+			</div>
+			<div class="tooltip">
+				<button onclick="insertLink()">Link</button>
+				<span class="tooltiptext">Link Text</span>
+			</div>
+
+			<div class="tooltip">
+				<button onclick="insertImage()">Image</button>
+				<span class="tooltiptext">Insert Image</span>
+			</div>
 		</div>
 		<div id="text-entry">
-			<textarea id="Text1" name="Text1">Hello,&NewLine;&NewLine;   &NewLine;&NewLine;&lt;a href="https://www.it.iastate.edu/help"&gt;&lt;strong&gt;ITS Solution Center&lt;/strong&gt;&lt;/a&gt;&NewLine;&lt;a href="https://www.iastate.edu">&lt;img border="0" alt="Iowa State University Logo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;</textarea>
+			<textarea id="Text1"
+				name="Text1">Hello,&NewLine;&NewLine;   &NewLine;&NewLine;&lt;a href="https://www.it.iastate.edu/help"&gt;&lt;strong&gt;ITS Solution Center&lt;/strong&gt;&lt;/a&gt;&NewLine;&lt;a href="https://www.iastate.edu">&lt;img border="0" alt="Iowa State University Logo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;</textarea>
 		</div>
-		<p style="font-size: 10px;color: red;margin: 0px;"><b>Don't copy this directly into a ticket! Use the button below!</b></p>
+		<p style="font-size: 10px;color: red;margin: 0px;"><b>Don't copy this directly into a ticket! Use the button
+				below!</b></p>
 		<br>
 		<div style="text-align: center;">
 			<button class="submit-btn" onclick="copyForTicket()">Copy for Ticket</button>
 			<br><br>
-			<button class="reset-btn" onClick="refreshPage()" >Reset</button>
-			<a target=”_blank” href="https://iastate.service-now.com/kb_view.do?sysparm_article=KB0023216"><button class="info-btn">Info</button></a>
+			<button class="reset-btn" onClick="refreshPage()">Reset</button>
+			<a target=”_blank” href="https://iastate.service-now.com/kb_view.do?sysparm_article=KB0023216"><button
+					class="info-btn">Info</button></a>
 		</div>
-    </div>
-  </body>
+	</div>
+</body>
+
 </html>
