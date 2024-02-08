@@ -154,3 +154,17 @@ function copyForTicket() {
 			}
 		}
            
+function color() {
+            var textarea = document.getElementById("Text1");
+            var start = textarea.selectionStart;
+            var end = textarea.selectionEnd;
+            var selectedText = textarea.value.substring(start, end);
+            var color = document.getElementById("colorPicker").value;
+
+            if (end - start > 0) {
+                var newText = textarea.value.substring(0, start) + '<span style="color:' + color + ';">' + selectedText + '</span>' + textarea.value.substring(end);
+                textarea.value = newText;
+            } else {
+                alert('No text selected');
+            }
+        }
