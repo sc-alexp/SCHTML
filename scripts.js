@@ -19,7 +19,9 @@ function notReady() {
 
 function insertImage() {
     var link = prompt("Please enter the link to the image:");
-    var width = prompt("Please enter the width of the image (in px.), 300px is reccomended:");
+    if (link) {
+    	var width = prompt("Please enter the width of the image (in px.), 300px is reccomended:");
+    }
 
     if (link && width) {
         var textarea = document.getElementsByName("Text1")[0];
