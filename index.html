@@ -83,6 +83,38 @@
 			<a target=”_blank” href="https://iastate.service-now.com/kb_view.do?sysparm_article=KB0023216"><button
 					class="info-btn">Info</button></a>
 		</div>
+		<p style="font-size: 12px;margin: 0px;"><u>ServiceNow Portal Preview</u></p>
+		<iframe id="output-iframe"></iframe>
+		<script>
+		// Function to update the iframe content
+		var textArea = document.getElementById("Text1");
+		var outputIframe = document.getElementById("output-iframe");
+
+        function updateIframeContent() {
+			var htmlContent = textArea.value;
+			htmlContent = htmlContent.replace(/\n/g, "<br>");
+			var doc = outputIframe.contentDocument;
+			doc.open();
+			doc.write(htmlContent);
+			doc.close();
+			
+			// Update CSS styles inside the iframe
+			const style = doc.createElement('style');
+			style.textContent = 'body { font-family: "Lato", sans-serif;}a {color: #7C2529;text-decoration: none;}code {padding: 0.2rem 0.4rem;font-size: 90%;color: #cd293c;background-color: #F0F1F5;border-radius: 0.4rem;}'; // Set default text color to red
+			doc.head.appendChild(style);
+			
+			outputIframe.style.height = doc.body.scrollHeight + 'px';
+			
+			var links = doc.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.setAttribute('target', '_blank');
+        });
+        }
+
+        // Call the function initially and whenever the textarea content changes
+        updateIframeContent();
+        textArea.addEventListener('input', updateIframeContent);
+		</script>
 	</div>
 </body>
 
