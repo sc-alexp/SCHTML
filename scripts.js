@@ -32,6 +32,8 @@ function insertImage() {
 
         var newText = textarea.value.substring(0, startPos) + imgTag + textarea.value.substring(endPos);
         textarea.value = newText;
+		
+		updateIframeContent();
     }
 }
 
@@ -51,6 +53,8 @@ function insertLink() {
         var linkTag = '<a href="' + link + '"><u>' + text + '</u></a>';
         var newText = textarea.value.substring(0, startPos) + linkTag + textarea.value.substring(endPos);
         textarea.value = newText;
+		
+		updateIframeContent();
     }
 }
 
@@ -86,6 +90,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<b>" + selectedText + "</b>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -99,6 +105,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<u>" + selectedText + "</u>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -112,6 +120,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<i>" + selectedText + "</i>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -125,6 +135,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<big>" + selectedText + "</big>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -138,6 +150,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<small>" + selectedText + "</small>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -151,6 +165,8 @@ function copyForTicket() {
 			if (end-start > 0) {
 				var newText = textarea.value.substring(0, start) + "<code>" + selectedText + "</code>" + textarea.value.substring(end);
 				textarea.value = newText;
+				
+				updateIframeContent();
 			} else {
 				alert('No text selected');
 			}
@@ -166,7 +182,9 @@ function color() {
             if (end - start > 0) {
                 var newText = textarea.value.substring(0, start) + '<span style="color:' + color + ';">' + selectedText + '</span>' + textarea.value.substring(end);
                 textarea.value = newText;
+				
+				updateIframeContent();
             } else {
                 alert('No text selected');
             }
-        }
+}
