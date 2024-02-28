@@ -196,25 +196,25 @@ function accountInfo() {
 		//Prompt for NetID
 		var netID = prompt("Net-ID:");
 		if (netID) {
-			string.textContent += ("<b>Net-ID</b>: <code>" + netID + "</code>\n");
+			string += ("<b>Net-ID</b>: <code>" + netID + "</code>\n");
 		}
 
 		//Prompt for status
 		var status = prompt("Status:");
 		if (status) {
-			string.textContent += ("<b>Status</b>: <code>" + status + "</code>\n");
+			string += ("<b>Status</b>: <code>" + status + "</code>\n");
 		}
 
 		//Prompt for OU
 		var organizationalUnit = prompt("OU:");
 		if (organizationalUnit) {
-			string.textContent += ("<b>OU</b>: <code>" + organizationalUnit + "</code>\n");
+			string += ("<b>OU</b>: <code>" + organizationalUnit + "</code>\n");
 		}
 
 		//Prompt for Sponsor
 		var sponsor = prompt("Sponsor:");
 		if (sponsor) {
-			string.textContent += ("<b>Sponsor</b>: <code>" + sponsor + "</code>\n");
+			string += ("<b>Sponsor</b>: <code>" + sponsor + "</code>\n");
 		}
 
 		/* OKTA */
@@ -222,13 +222,13 @@ function accountInfo() {
 		//Prompt for Last Login
 		var lastLogin = prompt("Last Login:");
 		if (lastLogin) {
-			string.textContent += ("\n<big><b><u>Okta</u></b></big>:\n");
-			string.textContent += ("<b>lastLogin</b>: <code>" + lastLogin + "</code>\n");
+			string += ("\n<big><b><u>Okta</u></b></big>:\n");
+			string += ("<b>lastLogin</b>: <code>" + lastLogin + "</code>\n");
 		}
 
     	if (netID || status || organizationalUnit || Sponsor || lastLogin) {
         	var textarea = document.getElementsByName("Text1")[0];
-        	textarea.value = string.textContent;
+        	textarea.value = string;
 		
 			updateIframeContent();
     	} else {
