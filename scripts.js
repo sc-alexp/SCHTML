@@ -190,9 +190,27 @@ function color() {
 }
 
 function accountInfo() {
-	alert("This will clear the text field!");
-	if (confirm("Do you still want to continue?")) {
-		alert("This is WIP");
+	if (confirm("This will clear the text field!\nDo you still want to continue?")) {
+		var netID = prompt("Net-ID:");
+    	var status = prompt("Status:");
+		var organizationalUnit = prompt("OU:");
+		var sponsor = prompt("Sponsor:");
+
+
+
+    	if (netID && status && organizationalUnit) {
+        	var textarea = document.getElementsByName("Text1")[0];
+			if (sponsor) {
+				var string = "<b><big><u>ASW</u></big></b>:\n<b>Net-ID</b>: <code>" + netID + "</code>\n<b>Status</b>: <code>" + status + "</code>\n<b>OU</b>: <code>" + organizationalUnit + "</code>\n\n<b>Sponsor</b>: " + sponsor;
+			} else {
+				var string = "<b><big><u>ASW</u></big></b>:\n<b>Net-ID</b>: <code>" + netID + "</code>\n<b>Status</b>: <code>" + status + "</code>\nOU: <code>" + organizationalUnit + "</code>";
+			}
+        	textarea.value = string;
+		
+			updateIframeContent();
+    	} else {
+			alert("Insufficent information!");
+		}
 	}
 }
 // define a handler
