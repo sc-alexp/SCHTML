@@ -191,20 +191,43 @@ function color() {
 
 function accountInfo() {
 	if (confirm("This will clear the text field!\nDo you still want to continue?")) {
+		var string = "<big><b><u>ASW</u></b></big>:\n";
+
+		//Prompt for NetID
 		var netID = prompt("Net-ID:");
-    	var status = prompt("Status:");
+		if (netID) {
+			string += ("<b>Net-ID</b>: <code>" + NetID + "</code>\n");
+		}
+
+		//Prompt for status
+		var status = prompt("Status:");
+		if (status) {
+			string += ("<b>Status</b>: <code>" + status + "</code>\n");
+		}
+
+		//Prompt for OU
 		var organizationalUnit = prompt("OU:");
+		if (organizationalUnit) {
+			string += ("<b>OU</b>: <code>" + organizationalUnit + "</code>\n");
+		}
+
+		//Prompt for Sponsor
 		var sponsor = prompt("Sponsor:");
+		if (sponsor) {
+			string += ("<b>Sponsor</b>: <code>" + sponsor + "</code>\n");
+		}
 
+		/* OKTA */
 
+		//Prompt for Last Login
+		var lastLogin = prompt("Last Login:");
+		if (lastLogin) {
+			string += ("\n<big><b><u>Okta</u></b></big>:\n");
+			string += ("<b>lastLogin</b>: <code>" + lastLogin + "</code>\n");
+		}
 
-    	if (netID && status && organizationalUnit) {
+    	if (netID || status || organizationalUnit || Sponsor || lastLogin) {
         	var textarea = document.getElementsByName("Text1")[0];
-			if (sponsor) {
-				var string = "<b><big><u>ASW</u></big></b>:\n<b>Net-ID</b>: <code>" + netID + "</code>\n<b>Status</b>: <code>" + status + "</code>\n<b>OU</b>: <code>" + organizationalUnit + "</code>\n\n<b>Sponsor</b>: " + sponsor;
-			} else {
-				var string = "<b><big><u>ASW</u></big></b>:\n<b>Net-ID</b>: <code>" + netID + "</code>\n<b>Status</b>: <code>" + status + "</code>\nOU: <code>" + organizationalUnit + "</code>";
-			}
         	textarea.value = string;
 		
 			updateIframeContent();
