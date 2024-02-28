@@ -189,6 +189,12 @@ function color() {
             }
 }
 
+function accountInfo() {
+	alert("This will clear the text field!");
+	if (confirm("Do you still want to continue?")) {
+		alert("This is WIP");
+	}
+}
 // define a handler
 function doc_keyUp(e) {
 
