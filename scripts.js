@@ -223,7 +223,7 @@ function accountInfo() {
 		var lastLogin = prompt("Last Login:");
 		if (lastLogin) {
 			string += ("\n<big><b><u>Okta</u></b></big>:\n");
-			string += ("<b>lastLogin</b>: <code>" + lastLogin + "</code>\n");
+			string += ("<b>Last Login</b>: <code>" + lastLogin + "</code>\n");
 		}
 
     	if (netID || status || organizationalUnit || Sponsor || lastLogin) {
