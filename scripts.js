@@ -196,7 +196,7 @@ function accountInfo() {
 		//Prompt for NetID
 		var netID = prompt("Net-ID:");
 		if (netID) {
-			string.textContent += ("<b>Net-ID</b>: <code>" + NetID + "</code>\n");
+			string.textContent += ("<b>Net-ID</b>: <code>" + netID + "</code>\n");
 		}
 
 		//Prompt for status
