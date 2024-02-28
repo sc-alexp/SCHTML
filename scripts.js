@@ -191,7 +191,7 @@ function color() {
 
 function accountInfo() {
 	if (confirm("This will clear the text field!\nDo you still want to continue?")) {
-		var string = "<div style=\"background: #800; color: white; padding-left: 5px;\"><big><b><u>ASW</u></b></big>:</div>";
+		var string = "<div style=\"background: #800; color: white; padding-left: 5px; border: 1px solid black;\"><big><b><u>ASW</u></b></big>:</div>";
 
 		//Prompt for NetID
 		var netID = prompt("Net-ID:");
@@ -222,7 +222,7 @@ function accountInfo() {
 		//Prompt for Last Login
 		var lastLogin = prompt("Last Login:");
 		if (lastLogin) {
-			string += ("\n<div style=\"background: #800; color: white; padding-left: 5px;\"><big><b><u>Okta Info</u></b></big>:</div>");
+			string += ("\n<div style=\"background: #800; color: white; padding-left: 5px; border: 1px solid black;\"><big><b><u>Okta Info</u></b></big>:</div>");
 			string += ("<b>Last Login</b>: <code>" + lastLogin + "</code>\n");
 		}
 
