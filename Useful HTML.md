@@ -22,5 +22,5 @@ Creates a post-it to insert information from copilot
 
 ```
 <img src="https://stoneridgesoftware.com/wp-content/uploads/2024/03/copilot-logo-color.png" height="30">
-<div width="100%" style="border: solid 1px; box-shadow: 0px 0px 1px black; padding: 5px; margin-top: 10px; border-radius: 10px;"></div>
+<div width="100%" style="border: solid 1px; box-shadow: 0px 0px 1px black; padding: 10px; margin-top: 10px; border-radius: 10px;"></div>
 ```
