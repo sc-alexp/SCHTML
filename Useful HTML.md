@@ -21,7 +21,7 @@ Creates a post-it to insert information from a KBA straight into a ticket
 Creates a post-it to insert information from copilot
 
 ```
-<img src="https://stoneridgesoftware.com/wp-content/uploads/2024/03/copilot-logo-color.png" height="30px">
+<img src="https://stoneridgesoftware.com/wp-content/uploads/2024/03/copilot-logo-color.png" style="height: 30px;">
 <div width="100%" style="border: solid 1px; box-shadow: 0px 0px 1px black; padding: 10px; margin-top: 10px; border-radius: 10px;"></div>
 ```
 
