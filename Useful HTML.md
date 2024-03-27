@@ -24,3 +24,14 @@ Creates a post-it to insert information from copilot
 <img src="https://stoneridgesoftware.com/wp-content/uploads/2024/03/copilot-logo-color.png" height="30px">
 <div width="100%" style="border: solid 1px; box-shadow: 0px 0px 1px black; padding: 10px; margin-top: 10px; border-radius: 10px;"></div>
 ```
+
+## Countdown Timer
+Creates a countdown timer to paste into a ticket
+
+1. Navigate to [timeanddate.com/clocks/freecountdown.html](https://www.timeanddate.com/clocks/freecountdown.html)
+2. Configure your countdown (preview in lower-right-hand corner)
+3. Click `Show HTML for Countdown Timer` and grab the `iframe` code
+4. Use this code in the [SCHTML Creator](https://sc-alexp.github.io/SCHTML/):
+```
+<div style="text-align: center;">INSERT iframe HERE</div>
+```
