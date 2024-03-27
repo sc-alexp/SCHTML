@@ -49,7 +49,7 @@ Hello,
 
 &nbsp;&nbsp;&nbsp;You are invited to a <a href="https://iastate.zoom.us" target="_blank" rel="noopener noreferrer" style="text-decoration: none; font-weight: bold; color: #2d8cff;">Zoom</a> meeting. Join from a PC, Mac, iPad, iPhone or Android device. Please click this URL to start or join:
 
-<div style="background: linear-gradient(90deg, #C8102E, red, #C8102E); text-align: center; border-radius: 15px;"><a href="[JOIN LINK HERE]" style="color: white; font-weight: bold; font-size: 3rem">Join</a></div><small>(If this does not work, go to <a href="https://iastate.zoom.us/">https://iastate.zoom.us/</a> and enter meeting ID: <code>[MEETING ID HERE]</code> and password: <code>[MEETING PASSWORD HERE]</code>)</small>
+<div style="background: linear-gradient(90deg, #C8102E, red, #C8102E); text-align: center; border-radius: 15px; max-width: 300px; margin-left: auto; margin-right: auto;"><a href="[JOIN LINK HERE]" style="color: white; font-weight: bold; font-size: 3rem;">Join</a></div><small>(If this does not work, go to <a href="https://iastate.zoom.us/">https://iastate.zoom.us/</a> and enter meeting ID: <code>[MEETING ID HERE]</code> and password: <code>[MEETING PASSWORD HERE]</code>)</small>
 
 &nbsp;&nbsp;&nbsp;You can also join from dial-in phone line:
 Dial: <a href="tel:3017158592">+1 (301) 715-8592</a> or <a href="tel:3052241968">+1 (305) 224-1968</a>
