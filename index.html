@@ -1,126 +1,18 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-	<title>SCHTML</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="scripts.js"></script>
-	<link rel="icon" type="image/x-icon" href="images/favicon.png">
-</head>
-
+<html lang="en">
+<meta charset="UTF-8">
+<title>𝙎𝘾 𝙃𝙏𝙈𝙇</title>
+<link rel="icon" type="image/x-icon" href="favicon2.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="scripts.js"></script>
 <body>
-	<div class="container"
-		style="background-color: #C8102E; margin: 0px; padding: 10px; box-shadow: 0px 0px 10px black; position: fixed; top: 0; left: 0; width: 100%;">
-		<!-- Navbar to display ISU logo & Website title -->
-		<!-- ISU Logo -->
-		<a target="_blank" rel="noopener noreferrer" href="https://iastate.edu"><img class="isulogo"
-				src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg"></a>
-		<div class="vertical-center" style="right: 30px;">
-			<a target="_blank" rel="noopener noreferrer" style="text-decoration:none;"
-				href="https://its.iastate.edu/help">
-				<h1>ITS Solution Center HTML Formatter</h1>
-			</a>
-		</div>
-	</div>
-
-	<div style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-150px); height: auto;">
-		<!-- Field for user text-entry -->
-		<div class="btn-group">
-			<div class="tooltip">
-				<button onclick="color()">Apply:</button>
-				<span class="tooltiptext">Apply Color</span>
-			</div>
-			<div class="tooltip">
-				<input type="color" id="colorPicker" value="#000000">
-				<span class="tooltiptext">Choose Color</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="bold()"><b>B</b></button>
-				<span class="tooltiptext">Bold Text</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="italic()"><i>I</i></button>
-				<span class="tooltiptext">Italicize Text</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="underline()"><u>U</u></button>
-				<span class="tooltiptext">Underline Text</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="big()">Big</button>
-				<span class="tooltiptext">Increase Text Size</span>
-			</div>
-
-			<div class="tooltip">
-				<button onclick="small()">Small</button>
-				<span class="tooltiptext">Decrease Text Size</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="code()">Code</button>
-				<span class="tooltiptext">Code</span>
-			</div>
-			<div class="tooltip">
-				<button onclick="insertLink()">Link</button>
-				<span class="tooltiptext">Link Text</span>
-			</div>
-
-			<div class="tooltip">
-				<button onclick="insertImage()">Image</button>
-				<span class="tooltiptext">Insert Image</span>
-			</div>
-
-			<div class="tooltip">
-				<button onclick="accountInfo()">Acct 🛈</button>
-				<span class="tooltiptext">Insert Account Info (Only use in Work Notes)</span>
-			</div>
-		</div>
-		<div id="text-entry">
-			<textarea id="Text1"
-				name="Text1">Hello,&NewLine;&NewLine;   &NewLine;&NewLine;&lt;a href="https://www.it.iastate.edu/help"&gt;&lt;strong&gt;ITS Solution Center&lt;/strong&gt;&lt;/a&gt;&NewLine;&lt;a href="https://www.iastate.edu">&lt;img border="0" alt="Iowa State University Logo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"&gt;</textarea>
-		</div>
-		<p style="font-size: 10px;color: red;margin: 0px;"><b>Don't copy this directly into a ticket! Use the button
-				below!</b></p>
-		<br>
-		<div style="text-align: center;">
-			<button class="submit-btn" onclick="copyForTicket()">Copy for Ticket</button>
-			<br><br>
-			<button class="reset-btn" onClick="refreshPage()">Reset</button>
-			<a target=”_blank” href="https://iastate.service-now.com/kb_view.do?sysparm_article=KB0023216"><button
-					class="info-btn">Info</button></a>
-		</div>
-		<p style="font-size: 12px;margin: 0px;"><u>ServiceNow Portal Preview</u></p>
-		<iframe id="output-iframe"></iframe>
-		<script>
-		// Function to update the iframe content
-		var textArea = document.getElementById("Text1");
-		var outputIframe = document.getElementById("output-iframe");
-
-        function updateIframeContent() {
-			var htmlContent = textArea.value;
-			htmlContent = htmlContent.replace(/\n/g, "<br>");
-			var doc = outputIframe.contentDocument;
-			doc.open();
-			doc.write(htmlContent);
-			doc.close();
-			
-			// Update CSS styles inside the iframe
-			const style = doc.createElement('style');
-			style.textContent = 'body { font-family: "Lato", sans-serif;}a {color: #7C2529;text-decoration: none;}code {padding: 0.2rem 0.4rem;font-size: 90%;color: #cd293c;background-color: #F0F1F5;border-radius: 0.4rem;}'; // Set default text color to red
-			doc.head.appendChild(style);
-			
-			outputIframe.style.height = doc.body.scrollHeight + 'px';
-			
-			var links = doc.querySelectorAll('a');
-        links.forEach(function(link) {
-            link.setAttribute('target', '_blank');
-        });
-        }
-
-        // Call the function initially and whenever the textarea content changes
-        updateIframeContent();
-        textArea.addEventListener('input', updateIframeContent);
-		</script>
-	</div>
+<!-- Navbar -->
+<div class="navbar">
+<ul>
+<li><a href="https://www.iastate.edu/" target="_blank"><img class="isulogo" src="https://www.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-red.svg"></a></li>
+<li><div class="SCtitle"><a href="https://www.it.iastate.edu/help" target="_blank">ITS Solution Center HTML Formatter</a></div></li>
+</ul>
+</div>
 </body>
-
 </html>
