@@ -1,211 +1,82 @@
-.container {
-	position: relative;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.navbar {
+		border: 3px solid red;
+	}
 }
 
-.vertical-center {
-	margin: auto;
-	position: absolute;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.navbar {
+		border: 3px solid orange;
+	}
 }
 
-body {}
-
-h1 {
-	font-family: Nimbus Sans, sans-serif;
-	font-size: 24px;
-	color: white;
-	transition: 0.3s;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.navbar {
+		border: 3px solid green;
+		padding: 10px;
+		height: 50px;
+	}
+	
+	.SCtitle {
+		float: right;
+		padding: 15px 0px;
+		font-size: 20px;
+    }
 }
 
-h1:hover {
-	opacity: 0.5;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.navbar {
+		border: 3px solid blue;
+	}
+	
+	.SCtitle {
+		padding: 12px 0px;
+		font-size: 24px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.navbar {
+		border: 3px solid purple;
+	}
+	
+	.SCtitle {
+		padding: 19px 0px;
+		font-size: 28px;
+    }
+}
+
+body {
+	margin: 0;
+}
+
+.navbar {
+	background: linear-gradient(45deg, #C8102E, black);
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar ul li {
+	display: inline-block;
 }
 
 .isulogo {
 	filter: brightness(0) invert(1);
-	transition: 0.3s;
 }
 
-.isulogo:hover {
-	opacity: 0.5;
-}
-
-p {
-	font-family: Nimbus Sans, sans-serif;
-
-	padding: 0px;
-	margin: 0px;
-}
-
-.btn-group button {
-	background-color: lightgray;
-	color: black;
-	border: none;
-	border-radius: 3px;
-	padding: 3px 5px;
-	margin: 1px;
-	cursor: pointer;
-	float: left;
-	font-family: Nimbus Sans, sans-serif;
-	font-size: 18px;
-}
-
-.btn-group input {
-	background-color: lightgray;
-	color: black;
-	border: none;
-	border-radius: 3px;
-	padding: 3px 5px;
-	margin: 1px;
-	cursor: pointer;
-	float: left;
-	font-family: Nimbus Sans, sans-serif;
-	font-size: 18px;
-}
-
-.btn-group button:hover {
-	background-color: darkgray;
-}
-
-.btn-group button:active {
-	transform: translateY(2px);
-}
-
-textarea {
-	width: 600px;
-	height: 200px;
-	border-radius: 5px;
-	border-width: 3px;
-	border-color: lightgray;
-	box-shadow: 0px 0px 30px lightgray;
-	resize: none;
-	font-family: Lato, Arial, sans-serif;
-	font-size: 14px;
-}
-
-.submit-btn {
-	padding: 10px 15px;
-	font-size: 24px;
-	text-align: center;
-	cursor: pointer;
-	outline: none;
+.SCtitle a {
 	color: white;
-	background-color: #C8102E;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 9px #520713;
-	transition: 0.1s;
+	text-decoration: none;
+	font-family: Nimbus Sans, sans-serif;
+	font-weight: bold;
 }
-
-.submit-btn:active {
-	color: lightgreen;
-	background-color: #7A0A1D;
-	box-shadow: 0 5px #520713, 0px 0px 25px lightgreen, 0px 0px 100px lightgreen;
-	text-shadow: 0px 0px 10px lightgreen;
-	transform: translateY(4px);
-}
-
-.submit-btn:hover {
-	color: lightgreen;
-}
-
-.reset-btn {
-	padding: 5px 10px;
-	font-size: 12px;
-	text-align: center;
-	cursor: pointer;
-	outline: none;
-	color: white;
-	background-color: #C8102E;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 3px #520713;
-	transition: 0.1s;
-}
-
-.reset-btn:active {
-	color: red;
-	background-color: #7A0A1D;
-	<div class="tooltip">Hover over me <span class="tooltiptext">Tooltip text</span></div>box-shadow: 0 0px #520713, 0px 0px 25px red, 0px 0px 100px red;
-	text-shadow: 0px 0px 10px red;
-	transform: translateY(3px);
-}
-
-.reset-btn:hover {
-	color: red;
-}
-
-.info-btn {
-	padding: 5px 10px;
-	font-size: 12px;
-	text-align: center;
-	cursor: pointer;
-	outline: none;
-	color: black;
-	background-color: lightgray;
-	border: none;
-	border-radius: 15px;
-	box-shadow: 0 3px #520713;
-	transition: 0.1s;
-}
-
-.info-btn:active {
-	color: lightblue;
-	background-color: #darkgray;
-	box-shadow: 0 0px lightblue, 0px 0px 25px lightblue, 0px 0px 100px lightblue;
-	text-shadow: 0px 0px 10px lightblue;
-	transform: translateY(3px);
-}
-
-.info-btn:hover {
-	color: lightblue;
-	background-color: darkgray;
-}
-
-.tooltip {
-	position: relative;
-	display: inline-block;
-}
-
-.tooltip .tooltiptext {
-	visibility: hidden;
-	width: 120px;
-	background-color: #555;
-	color: #fff;
-	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -60px;
-	opacity: 0;
-	transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-	visibility: visible;
-	opacity: 1;
-}
-
-#output-iframe {
-            width: 100%;
-			height: 125px;
-			border: 0.1rem solid #dee5e7;
-			border-radius: 0.4rem;
-			box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, .1);
-        }
